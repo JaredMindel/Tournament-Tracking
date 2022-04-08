@@ -1,0 +1,32 @@
+Get input for number of participants
+	ask for number of participants
+
+Show menu
+
+1 for sign up
+2 for cancel sign up
+3 for view participants
+4 for save changes
+5 for exit
+
+1: Sign up
+	Name
+	Desired starting slot
+	
+2: Cancel Sign Up
+	Ask for starting slot and name
+	Show error if they aren't there
+
+3: View Participants
+	Show up to 5 slots before and up to 5 slots after selected shot
+	If there are less than 5 slots, only show the available slots
+	
+4: Save changes
+	Ask if they want to save changes: 
+		Save changes if they choose y
+		If they say no, send them to the exit portion
+
+5: Exit
+	if they want to leave and they haven't saved, tell them that they will lose their changes 
+
+		

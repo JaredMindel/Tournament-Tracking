@@ -1,0 +1,9 @@
+Menu
+====
+1. Sign Up
+2. Cancel Sign Up
+3. View Participantss
+4. Save Changes
+5. Exit
+
+Select one of the above by number.
