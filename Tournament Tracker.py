@@ -13,7 +13,9 @@ print(f'{introduction_text} \nThere are {total_number} participants')
 def menu_interactive(choice = 0):
     
     participant_dictionary = {}
+    selection_dictionary = {}
     exit_game = False
+    selection_number = 0
 
     for x in range(total_number + 1):
         participant_dictionary[x] = None
@@ -27,16 +29,27 @@ def menu_interactive(choice = 0):
             participant_dictionary[participant_number] = participant_name
             continue
         elif choice == 2:
-            for x in participant_dictionary:
-                print(f'{x}: {participant_dictionary[x]}')
             remove_name = str(input("Who do you want to remove?"))
             for x in participant_dictionary:
                 if participant_dictionary[x] == remove_name:
                     participant_dictionary[x] = None
         elif choice == 3:
-            for x in participant_dictionary:
-                print(f'{x}: {participant_dictionary[x]}')
-
+            selection_name = input("Who do you want to see?")
+            for key, value in participant_dictionary.items():
+                if selection_name == value:
+                    selection_number = key
+            selection_beginning = selection_number - 5
+            selection_ending = selection_number + 6
+            if selection_beginning == 0:
+                selection_beginning = 1
+            for key, value in participant_dictionary.items():
+                if key >= selection_beginning and key <= selection_ending:
+                    selection_dictionary[key] = value
+                    print(f'{key}: {value}')
+        elif choice == 4:
+            save_csv = input("Would you like to save your changes? Y/N").upper()
+        elif choice == 5:
+            exit_game = True
 
 menu_interactive()
 
